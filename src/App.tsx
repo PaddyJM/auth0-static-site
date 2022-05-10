@@ -4,7 +4,7 @@ import "./App.css";
 import { useAuth0 } from "@auth0/auth0-react";
 
 function App() {
-  const { loginWithRedirect, isAuthenticated, logout } = useAuth0();
+  const { loginWithRedirect, isAuthenticated, logout, user } = useAuth0();
   if (!isAuthenticated) {
     return <button onClick={() => loginWithRedirect()}>Log In</button>;
   }
@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-
+        <h2>Welcome, {user && user.name}!</h2>
         <button onClick={() => logout({ returnTo: window.location.origin })}>
           Log Out
         </button>
