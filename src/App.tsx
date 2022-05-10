@@ -4,7 +4,7 @@ import './App.css';
 import { useAuth0 } from "@auth0/auth0-react";
 
 function App() {
-  const { loginWithRedirect, isAuthenticated } = useAuth0();
+  const { loginWithRedirect, isAuthenticated, logout } = useAuth0();
   if (!isAuthenticated) {
     return <button onClick={() => loginWithRedirect()}>Log In</button>;
   }
@@ -12,17 +12,10 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      
+         <button onClick={() => logout({ returnTo: window.location.origin })}>
+        Log Out
+      </button>
       </header>
     </div>
   );
