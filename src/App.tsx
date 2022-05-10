@@ -1,6 +1,6 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
 import { useAuth0 } from "@auth0/auth0-react";
 
 function App() {
@@ -12,10 +12,10 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-      
-         <button onClick={() => logout({ returnTo: window.location.origin })}>
-        Log Out
-      </button>
+
+        <button onClick={() => logout({ returnTo: window.location.origin })}>
+          Log Out
+        </button>
       </header>
     </div>
   );
