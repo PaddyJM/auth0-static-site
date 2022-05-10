@@ -7,4 +7,6 @@ jobs:
     steps:
       - name: Checkout the files
         uses: actions/checkout@v3
+      - name: Install node modules
+        run: npm ci
       - run: npm run build
